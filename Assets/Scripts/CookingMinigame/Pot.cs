@@ -21,13 +21,9 @@ public class Pot : MonoBehaviour
     {
         cookingMinigameManager = FindObjectOfType<CookingMinigameManager>();
     }
+    
 
-    private void Start()
-    {
-        InitializeNextDish();
-    }
-
-    private void InitializeNextDish()
+    public void InitializeNextDish()
     {
         Debug.Log("Initializing next dish");
         
