@@ -8,6 +8,7 @@ public enum SceneType
     MiniGame,
     CookingMinigame,
     RocketMinigame,
+    Mars,
 }
 
 static class SceneTypeExtensions
@@ -24,6 +25,8 @@ static class SceneTypeExtensions
                 return "CookingMinigame";
             case SceneType.RocketMinigame:
                 return "RocketMinigame";
+            case SceneType.Mars:
+                return "AliensScene";
             default:
                 return null;
         }

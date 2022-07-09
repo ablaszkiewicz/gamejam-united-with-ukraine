@@ -62,4 +62,9 @@ public class RocketMinigameManager : MonoBehaviour
     {
         gameWinPanel.Show();
     }
+
+    public void TransitionToMarsScene()
+    {
+        FindObjectOfType<SceneTransitionManager>().TransitionToScene(SceneType.Mars);
+    }
 }
