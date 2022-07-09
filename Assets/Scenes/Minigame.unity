@@ -450,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3028543669419025049, guid: 18f513a774265244ca974aac02f13ca6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3028543669419025049, guid: 18f513a774265244ca974aac02f13ca6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -855,6 +855,7 @@ MonoBehaviour:
   sprites: []
   maxBlocks: 6
   dialogue: {fileID: 11400000, guid: 515d6db63caf0d245a9a7a981b0a4932, type: 2}
+  gameOverPanel: {fileID: 0}
 --- !u!4 &1322368030
 Transform:
   m_ObjectHideFlags: 0
@@ -1113,7 +1114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7296152992478006827, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7296152992478006827, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
       propertyPath: m_AnchorMax.x
