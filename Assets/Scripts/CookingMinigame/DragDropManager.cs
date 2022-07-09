@@ -49,4 +49,9 @@ public class DragDropManager : MonoBehaviour
         position.z = Camera.main.nearClipPlane;
         currentlyAttachedIngridient.transform.position = position;
     }
+
+    public void Detach()
+    {
+        isAttached = false;
+    }
 }

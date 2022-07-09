@@ -21,6 +21,35 @@ public class CookingMinigameManager : MonoBehaviour
     [SerializeField] private Image food2;
     [SerializeField] private Image food3;
     [SerializeField] private Image food4;
+
+    [SerializeField] private Dialogue welcomeDialogue;
+    private DialoguePanel dialoguePanel;
+    private Pot pot;
+
+    private void Start()
+    {
+        dialoguePanel = FindObjectOfType<DialoguePanel>();
+        pot = FindObjectOfType<Pot>();
+
+
+        if (minigamesStatus.GetVisitStatus(SceneType.CookingMinigame))
+        {
+            pot.InitializeNextDish();
+        }
+        else
+        {
+            dialoguePanel.LoadDialogue(welcomeDialogue);
+        
+            dialoguePanel.OnDialogueFinished += () =>
+            {
+                pot.InitializeNextDish();
+            };
+        
+            dialoguePanel.Show();
+        }
+        
+        minigamesStatus.VisitMinigame(SceneType.CookingMinigame);
+    }
     
     public void CompleteMinigameAndExit()
     {

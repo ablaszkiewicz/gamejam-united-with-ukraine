@@ -7,5 +7,6 @@
         Water,
         Milk,
         Egg,
+        Sugar,
     }
 }
