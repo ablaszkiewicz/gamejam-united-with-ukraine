@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - name: Rob
-    sentence: Welcome back. Construction workers from Warswa were truly impressed
+    sentence: Welcome back. Construction workers from Warsaw were truly impressed
       by your crane steering capabilities
     buttonText: really?
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
-    sentence: Yeah. You did a great job
+    sentence: Yeah. You did a great job. People are impressed by this whole eastern
+      + central europe coalition.
     buttonText: thanks
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
-    sentence: Ok. I've got new job for you?
+    sentence: Ok. I've got new job for you
     buttonText: ok
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
