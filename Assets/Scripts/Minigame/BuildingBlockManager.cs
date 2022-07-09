@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BuildingBlockManager : MonoBehaviour
 {
@@ -10,21 +12,46 @@ public class BuildingBlockManager : MonoBehaviour
     private bool blockedSpawning = false;
     private float[] defaultPositions = {-2, 2};
     private HookController _hookController;
+
+    [SerializeField] private Dialogue dialogue;
+    private DialoguePanel dialoguePanel;
+    private SceneTransitionManager sceneTransitionManager;
+    private bool gameStarted = false;
+
+    private void Awake()
+    {
+        sceneTransitionManager = FindObjectOfType<SceneTransitionManager>();
+        _hookController = FindObjectOfType<HookController>();
+    }
     
-    // Start is called before the first frame update
     void Start()
     {
-        _hookController = FindObjectOfType<HookController>();
-        SpawnBuildingBlock();
+        dialoguePanel = FindObjectOfType<DialoguePanel>();
+        dialoguePanel.LoadDialogue(dialogue);
+        dialoguePanel.OnDialogueFinished += StartGame;
+        dialoguePanel.Show();
     }
 
-    // Update is called once per frame
+    private void StartGame()
+    {
+        if (gameStarted)
+        {
+            return;
+        }
+
+        gameStarted = true;
+        Debug.Log("Starting");
+        SpawnBuildingBlock();   
+    }
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             RestartGame();
-        } else if (Input.GetKeyDown(KeyCode.Space) && !blockedSpawning)
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Space) && !blockedSpawning)
         {
             blockedSpawning = true;
             Invoke("SpawnBuildingBlock", 3);
@@ -46,14 +73,16 @@ public class BuildingBlockManager : MonoBehaviour
 
     public void RestartGame()
     {
-        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
-        
-        foreach (GameObject block in blocks)
-        {
-            GameObject.Destroy(block);
-        }
+        sceneTransitionManager.TransitionToScene(SceneType.MiniGame);
 
-        CancelInvoke();
-        Invoke("SpawnBuildingBlock", 3);
+        // GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
+        //
+        // foreach (GameObject block in blocks)
+        // {
+        //     GameObject.Destroy(block);
+        // }
+        //
+        // CancelInvoke();
+        // Invoke("SpawnBuildingBlock", 3);
     }
 }
