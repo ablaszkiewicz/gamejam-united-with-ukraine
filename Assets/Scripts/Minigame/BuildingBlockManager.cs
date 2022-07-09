@@ -20,6 +20,7 @@ public class BuildingBlockManager : MonoBehaviour
     
     private DialoguePanel dialoguePanel;
     private SceneTransitionManager sceneTransitionManager;
+    private AudioSource _audioSource;
     private bool gameStarted = false;
 
     private void Awake()
@@ -32,6 +33,7 @@ public class BuildingBlockManager : MonoBehaviour
     void Start()
     {
         dialoguePanel = FindObjectOfType<DialoguePanel>();
+        _audioSource = GetComponent<AudioSource>();
 
         if (!status.GetVisitStatus(SceneType.MiniGame))
         {
@@ -70,8 +72,10 @@ public class BuildingBlockManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !blockedSpawning)
         {
             blockedSpawning = true;
+            _audioSource.Play();
             Invoke("SpawnBuildingBlock", 3);
             _hookController.GoUp();
+            
         }
     }
 
