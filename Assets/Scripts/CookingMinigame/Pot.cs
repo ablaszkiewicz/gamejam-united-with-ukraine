@@ -58,5 +58,6 @@ public class Pot : MonoBehaviour
         
         Destroy(col.gameObject);
         dragDropManager.Detach();
+        FindObjectOfType<CookingMinigameSoundPlayer>().PlayImpactSound();
     }
 }

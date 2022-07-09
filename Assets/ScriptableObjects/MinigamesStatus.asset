@@ -18,7 +18,7 @@ MonoBehaviour:
     isVisited: 0
   - sceneType: 2
     isFinished: 0
-    isVisited: 0
+    isVisited: 1
   - sceneType: 3
     isFinished: 0
     isVisited: 0

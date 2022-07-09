@@ -26,6 +26,7 @@ public class DragDropManager : MonoBehaviour
         currentlyAttachedIngridient = Instantiate(attachedIngredientPrefab);
         currentlyAttachedIngridient.GetComponent<AttachedIngredient>().Initialize(foodType);
         isAttached = true;
+        FindObjectOfType<CookingMinigameSoundPlayer>().PlayPickUpSound();
     }
 
     private void Update()
@@ -44,6 +45,7 @@ public class DragDropManager : MonoBehaviour
         {
             return;
         }
+        
         
         var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         position.z = Camera.main.nearClipPlane;
