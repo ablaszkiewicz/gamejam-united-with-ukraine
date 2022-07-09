@@ -10,45 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 163d46d83f6ba574bbd31cbd7284c740, type: 3}
-  m_Name: AfterWarsawDialogue
+  m_Name: RocketMinigameDialogue
   m_EditorClassIdentifier: 
   dialogues:
   - name: Rob
-    sentence: Welcome back. Construction workers from Warsaw were truly impressed
-      by your crane steering capabilities
-    buttonText: really?
+    sentence: Sir, we are really unlucky today...
+    buttonText: What happened?
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
-    sentence: Yeah. You did a great job. People are impressed by this whole eastern
-      + central europe coalition.
-    buttonText: thanks
+    sentence: One of astronauts is not feeling well
+    buttonText: Oh my... what now?
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
-    sentence: Ok. I've got new job for you
-    buttonText: ok
+    sentence: I told them that you can pilot the rocket!
+    buttonText: What? are you crazy?
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
-    sentence: You are a main organiser of EA100 summit in Ukraine.
-    buttonText: oh
-    image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
-  - name: Rob
-    sentence: Plane is starting in 20 minutes. Prepare a speech. You will be opening
-      this meeting
-    buttonText: what?
-    image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
-  - name: Rob
-    sentence: I am sure you will do fine.
-    buttonText: ...
+    sentence: Sir you are head of eastral. I am sure you will do fine
+    buttonText: ok....
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Wife
-    sentence: Are you back already?
-    buttonText: no honey
+    sentence: you better be on your way home
+    buttonText: bad news
     image: {fileID: 21300000, guid: a04b5d7dd5ea09a498fba2f88f6eca81, type: 3}
   - name: Wife
-    sentence: Where are you?
-    buttonText: On my way to ukraine
+    sentence: what happened?
+    buttonText: I'll be piloting a rocket
     image: {fileID: 21300000, guid: a04b5d7dd5ea09a498fba2f88f6eca81, type: 3}
   - name: Wife
-    sentence: WHAT?
-    buttonText: love you, bye
+    sentence: A rocket? Are you out of your mind?
+    buttonText: Got to go
     image: {fileID: 21300000, guid: a04b5d7dd5ea09a498fba2f88f6eca81, type: 3}

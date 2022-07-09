@@ -65,6 +65,6 @@ MonoBehaviour:
     buttonText: eastral
     image: {fileID: 21300000, guid: a04b5d7dd5ea09a498fba2f88f6eca81, type: 3}
   - name: Wife
-    sentence: Fine. I'll pick them up myself...
-    buttonText: Love you
+    sentence: What is eastral
+    buttonText: I'll explain later
     image: {fileID: 21300000, guid: a04b5d7dd5ea09a498fba2f88f6eca81, type: 3}

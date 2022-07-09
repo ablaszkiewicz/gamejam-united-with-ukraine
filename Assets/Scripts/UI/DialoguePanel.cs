@@ -22,6 +22,8 @@ public class DialoguePanel : MonoBehaviour
     private List<SingleDialogue> dialogues;
     private const float ANIMATION_DURATION = 0.2f;
     private Tween currentTextTween;
+    
+    [SerializeField] private RectTransform rectTransform;
 
     private void Awake()
     {
@@ -60,6 +62,8 @@ public class DialoguePanel : MonoBehaviour
         currentTextTween.Kill();
         currentTextTween = sentence.DOText(currentDialogue.sentence, currentDialogue.sentence.Length / 200.0f).SetEase(Ease.Linear);
         currentTextTween.onComplete = () => button.DOScale(Vector3.one, ANIMATION_DURATION).SetEase(Ease.OutQuint);
+        
+        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
     }
 
     private void FinishDialogue()

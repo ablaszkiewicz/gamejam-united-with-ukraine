@@ -7,6 +7,7 @@ public enum SceneType
     MainMenu,
     MiniGame,
     CookingMinigame,
+    RocketMinigame,
 }
 
 static class SceneTypeExtensions
@@ -21,6 +22,8 @@ static class SceneTypeExtensions
                 return "Minigame";
             case SceneType.CookingMinigame:
                 return "CookingMinigame";
+            case SceneType.RocketMinigame:
+                return "RocketMinigame";
             default:
                 return null;
         }
