@@ -59,7 +59,10 @@ public class CountryButton : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        FindObjectOfType<SceneTransitionManager>().TransitionToScene(sceneType);
+        if (countryType == CountryType.PENDING)
+        {
+            FindObjectOfType<SceneTransitionManager>().TransitionToScene(sceneType);
+        }
     }
 
     private void OnMouseOver()
