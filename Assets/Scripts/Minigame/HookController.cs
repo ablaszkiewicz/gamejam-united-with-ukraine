@@ -14,13 +14,6 @@ public class HookController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Vector3 userInput = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        rigidbody.MovePosition(transform.position + userInput * (Time.deltaTime * moveSpeed));
-    }
-
     public void GoUp()
     {
         transform.DOBlendableMoveBy(new Vector3(0, 3, 0), 1).SetEase(Ease.OutQuint);
