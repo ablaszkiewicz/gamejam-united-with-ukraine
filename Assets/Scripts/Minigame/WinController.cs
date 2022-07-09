@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class WinController : MonoBehaviour
 {
-    private float delay = 3;
     private Coroutine _currentRoutine;
+    private SceneTransitionManager sceneTransitionManager;
+
+    private void Start()
+    {
+        sceneTransitionManager = FindObjectOfType<SceneTransitionManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -31,6 +36,6 @@ public class WinController : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         
-        Debug.Log("Won the game!");
+        sceneTransitionManager.TransitionToScene(SceneType.MainMenu);
     }
 }

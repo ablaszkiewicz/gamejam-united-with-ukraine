@@ -456,9 +456,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1634625541546042026, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
+      propertyPath: m_text
+      value: I think we could use a better building. Would you like to try again?
+        I don't think you have a choice though - the contract says so.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395083952877197057, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
+      propertyPath: m_text
+      value: Ok.
+      objectReference: {fileID: 0}
     - target: {fileID: 5995398531671723047, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
       propertyPath: m_Alpha
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575813924911247598, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575813924911247598, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575813924911247598, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1322368029}
+    - target: {fileID: 6575813924911247598, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575813924911247598, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575813924911247598, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildingBlockManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575813924911247598, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 218c9f65442be3b4e99ff8e8716170d8, type: 3}

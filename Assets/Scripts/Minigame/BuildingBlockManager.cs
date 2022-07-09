@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Menu;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -15,6 +16,7 @@ public class BuildingBlockManager : MonoBehaviour
 
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private BasicPanel gameOverPanel;
+    [SerializeField] private MinigamesStatus status;
     
     private DialoguePanel dialoguePanel;
     private SceneTransitionManager sceneTransitionManager;
@@ -24,14 +26,24 @@ public class BuildingBlockManager : MonoBehaviour
     {
         sceneTransitionManager = FindObjectOfType<SceneTransitionManager>();
         _hookController = FindObjectOfType<HookController>();
+        status.CompleteMinigame(SceneType.MiniGame);
+        status.VisitMinigame(SceneType.MiniGame);
     }
     
     void Start()
     {
         dialoguePanel = FindObjectOfType<DialoguePanel>();
-        dialoguePanel.LoadDialogue(dialogue);
-        dialoguePanel.OnDialogueFinished += StartGame;
-        dialoguePanel.Show();
+
+        if (!status.GetVisitStatus(SceneType.MiniGame))
+        {
+            dialoguePanel.LoadDialogue(dialogue);
+            dialoguePanel.OnDialogueFinished += StartGame;
+            dialoguePanel.Show();
+        }
+        else
+        {
+            StartGame();
+        }
     }
 
     private void StartGame()
@@ -76,7 +88,6 @@ public class BuildingBlockManager : MonoBehaviour
     public void RestartGame()
     {
         gameOverPanel.Show();
-        //sceneTransitionManager.TransitionToScene(SceneType.MiniGame);
 
         // GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
         //
@@ -87,5 +98,10 @@ public class BuildingBlockManager : MonoBehaviour
         //
         // CancelInvoke();
         // Invoke("SpawnBuildingBlock", 3);
+    }
+
+    public void ReloadScene()
+    {
+        sceneTransitionManager.TransitionToScene(SceneType.MiniGame);
     }
 }
