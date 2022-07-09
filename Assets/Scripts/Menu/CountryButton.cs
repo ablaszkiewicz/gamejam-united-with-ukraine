@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Menu;
@@ -13,7 +14,10 @@ public class CountryButton : MonoBehaviour
     private Button button;
 
     private MinigamesStatus minigamesStatus;
-    private bool isFinised;
+    private MenuManager menuManager;
+    private CountryType countryType;
+
+    private SpriteRenderer spriteRenderer;
 
     public SceneType SceneType
     {
@@ -22,39 +26,62 @@ public class CountryButton : MonoBehaviour
     
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        menuManager = FindObjectOfType<MenuManager>();
         minigamesStatus = FindObjectOfType<MenuManager>().MinigamesStatus;
         button = GetComponentInChildren<Button>();
-        isFinised = minigamesStatus.GetStatusForScene(sceneType);
-        UpdateSceneCompletionStatus();
     }
     
     public void OnCountryButtonClicked()
     {
-        FindObjectOfType<SceneTransitionManager>().TransitionToScene(sceneType);
-    }
-
-    private void UpdateSceneCompletionStatus()
-    {
-        sceneCompletionStatusText.text = isFinised ? "Completed" : "Not completed";
+        
     }
 
     public void MarkUnavailable()
     {
-        button.interactable = false;
-        Debug.Log("Unavailable");
+        countryType = CountryType.NOT_AVAILABLE;
+        spriteRenderer.color = Color.red;
     }
 
 
     public void MarkCompleted()
     {
-        button.interactable = false;
-        Debug.Log("Completed");
-
+        countryType = CountryType.FINISHED;
+        
+        spriteRenderer.color = Color.green;
     }
 
     public void MarkNextTask()
     {
-        button.interactable = true;
-        Debug.Log("Next task");
+        countryType = CountryType.PENDING;
+        spriteRenderer.color = Color.gray;
     }
+
+    private void OnMouseDrag()
+    {
+        FindObjectOfType<SceneTransitionManager>().TransitionToScene(sceneType);
+    }
+
+    private void OnMouseOver()
+    {
+        if (countryType == CountryType.PENDING)
+        {
+            spriteRenderer.color = Color.yellow;
+        }
+    }
+    
+    private void OnMouseExit()
+    {
+        if (countryType == CountryType.PENDING)
+        {
+            spriteRenderer.color = Color.gray;
+        }
+    }
+}
+
+enum CountryType
+{
+    FINISHED,
+    PENDING,
+    NOT_AVAILABLE,
 }
