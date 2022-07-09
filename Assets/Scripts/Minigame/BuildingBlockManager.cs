@@ -14,6 +14,8 @@ public class BuildingBlockManager : MonoBehaviour
     private HookController _hookController;
 
     [SerializeField] private Dialogue dialogue;
+    [SerializeField] private BasicPanel gameOverPanel;
+    
     private DialoguePanel dialoguePanel;
     private SceneTransitionManager sceneTransitionManager;
     private bool gameStarted = false;
@@ -73,7 +75,8 @@ public class BuildingBlockManager : MonoBehaviour
 
     public void RestartGame()
     {
-        sceneTransitionManager.TransitionToScene(SceneType.MiniGame);
+        gameOverPanel.Show();
+        //sceneTransitionManager.TransitionToScene(SceneType.MiniGame);
 
         // GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
         //
