@@ -49,6 +49,7 @@ public class CookingMinigameManager : MonoBehaviour
         }
         
         minigamesStatus.VisitMinigame(SceneType.CookingMinigame);
+        minigamesStatus.CompleteMinigame(SceneType.CookingMinigame);
     }
     
     public void CompleteMinigameAndExit()

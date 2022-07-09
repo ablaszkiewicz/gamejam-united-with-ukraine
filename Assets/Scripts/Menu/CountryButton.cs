@@ -40,7 +40,7 @@ public class CountryButton : MonoBehaviour
     public void MarkUnavailable()
     {
         countryType = CountryType.NOT_AVAILABLE;
-        spriteRenderer.color = Color.red;
+        spriteRenderer.color = Color.gray;
     }
 
 
@@ -48,13 +48,13 @@ public class CountryButton : MonoBehaviour
     {
         countryType = CountryType.FINISHED;
         
-        spriteRenderer.color = Color.green;
+        spriteRenderer.color = Color.gray;
     }
 
     public void MarkNextTask()
     {
         countryType = CountryType.PENDING;
-        spriteRenderer.color = Color.gray;
+        spriteRenderer.color = Color.yellow;
     }
 
     private void OnMouseDrag()
@@ -66,7 +66,7 @@ public class CountryButton : MonoBehaviour
     {
         if (countryType == CountryType.PENDING)
         {
-            spriteRenderer.color = Color.yellow;
+            spriteRenderer.color = Color.green;
         }
     }
     
@@ -74,7 +74,7 @@ public class CountryButton : MonoBehaviour
     {
         if (countryType == CountryType.PENDING)
         {
-            spriteRenderer.color = Color.gray;
+            spriteRenderer.color = Color.yellow;
         }
     }
 }
