@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Hook
   - Block
+  - WinChecker
+  - BlockManager
   layers:
   - Default
   - TransparentFX

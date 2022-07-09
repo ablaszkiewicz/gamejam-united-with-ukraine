@@ -5,14 +5,16 @@ using UnityEngine;
 public class BuildingBlockManager : MonoBehaviour
 {
     [SerializeField] private GameObject buildingBlock;
-    [SerializeField] private GameObject winChecker;
-    [SerializeField] private Vector3 defaultPosition;
+    [SerializeField] private GameObject[] sprites;
     [SerializeField] private int maxBlocks = 4;
-
     private bool blockedSpawning = false;
+    private float[] defaultPositions = {-2, 2};
+    private HookController _hookController;
+    
     // Start is called before the first frame update
     void Start()
     {
+        _hookController = FindObjectOfType<HookController>();
         SpawnBuildingBlock();
     }
 
@@ -22,10 +24,11 @@ public class BuildingBlockManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             RestartGame();
-        } else if (Input.anyKey && !blockedSpawning)
+        } else if (Input.GetKeyDown(KeyCode.Space) && !blockedSpawning)
         {
             blockedSpawning = true;
             Invoke("SpawnBuildingBlock", 3);
+            _hookController.GoUp();
         }
     }
 
@@ -34,21 +37,14 @@ public class BuildingBlockManager : MonoBehaviour
         int spawnedBlocks = GameObject.FindGameObjectsWithTag("Block").Length;
 
         if (spawnedBlocks >= maxBlocks) return;
-        if (spawnedBlocks == maxBlocks - 1) Invoke("SpawnWinChecker", 1);
 
-        Vector3 spawnPosition = spawnedBlocks == 0 ? new Vector3(0, 0, 0) : defaultPosition;
+        float spawnPositionX = spawnedBlocks == 0 ? 0 : defaultPositions[Random.Range(0, defaultPositions.Length)];
         
         blockedSpawning = false;
-        Instantiate(buildingBlock, spawnPosition, Quaternion.identity);
+        Instantiate(buildingBlock, new Vector3(spawnPositionX, 6, 0), Quaternion.identity);
     }
 
-    void SpawnWinChecker()
-    {
-        Debug.Log("Spawned Win Checker");
-        Instantiate(winChecker, new Vector3(0, -0.5f, 0), Quaternion.identity);
-    }
-
-    void RestartGame()
+    public void RestartGame()
     {
         GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
         
@@ -57,6 +53,7 @@ public class BuildingBlockManager : MonoBehaviour
             GameObject.Destroy(block);
         }
 
-        // GameObject winChecker = GameObject.FindWithTag();
+        CancelInvoke();
+        Invoke("SpawnBuildingBlock", 3);
     }
 }

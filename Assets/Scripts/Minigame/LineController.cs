@@ -23,7 +23,7 @@ public class LineController : MonoBehaviour
         lineRenderer.SetPosition(0, blockAnchor.transform.position);
         lineRenderer.SetPosition(1, ropeHook.transform.position);
         
-        if (Input.anyKey)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             lineRenderer.enabled = false;
         }
