@@ -7,29 +7,30 @@ public class WinController : MonoBehaviour
 {
     private float delay = 3;
     private Coroutine _currentRoutine;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Block")
+        if (other.CompareTag("Block"))
         {
-            Invoke("CheckWinCondition", 5);
+            Debug.Log("Starting Coroutine");
+            _currentRoutine = StartCoroutine(BroadcastWin());
         }
     }
 
-    private void CheckWinCondition()
+    private void OnTriggerExit2D(Collider2D other)
     {
+        if (_currentRoutine != null)
+        {
+            Debug.Log("Stoping Coroutine");
+            StopCoroutine(_currentRoutine);
+        }
+    }
+
+
+    IEnumerator BroadcastWin()
+    {
+        yield return new WaitForSeconds(5f);
         
+        Debug.Log("Won the game!");
     }
 }

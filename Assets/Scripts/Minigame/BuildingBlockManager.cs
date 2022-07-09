@@ -6,7 +6,7 @@ public class BuildingBlockManager : MonoBehaviour
 {
     [SerializeField] private GameObject buildingBlock;
     [SerializeField] private GameObject winChecker;
-    [SerializeField] private Vector3 spawnPosition;
+    [SerializeField] private Vector3 defaultPosition;
     [SerializeField] private int maxBlocks = 4;
 
     private bool blockedSpawning = false;
@@ -19,7 +19,10 @@ public class BuildingBlockManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey && !blockedSpawning)
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartGame();
+        } else if (Input.anyKey && !blockedSpawning)
         {
             blockedSpawning = true;
             Invoke("SpawnBuildingBlock", 3);
@@ -31,7 +34,9 @@ public class BuildingBlockManager : MonoBehaviour
         int spawnedBlocks = GameObject.FindGameObjectsWithTag("Block").Length;
 
         if (spawnedBlocks >= maxBlocks) return;
-        if (spawnedBlocks == maxBlocks) SpawnWinChecker();
+        if (spawnedBlocks == maxBlocks - 1) Invoke("SpawnWinChecker", 1);
+
+        Vector3 spawnPosition = spawnedBlocks == 0 ? new Vector3(0, 0, 0) : defaultPosition;
         
         blockedSpawning = false;
         Instantiate(buildingBlock, spawnPosition, Quaternion.identity);
@@ -40,6 +45,18 @@ public class BuildingBlockManager : MonoBehaviour
     void SpawnWinChecker()
     {
         Debug.Log("Spawned Win Checker");
-        Instantiate(winChecker, new Vector3(0, 0.7f, 0), Quaternion.identity);
+        Instantiate(winChecker, new Vector3(0, -0.5f, 0), Quaternion.identity);
+    }
+
+    void RestartGame()
+    {
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
+        
+        foreach (GameObject block in blocks)
+        {
+            GameObject.Destroy(block);
+        }
+
+        // GameObject winChecker = GameObject.FindWithTag();
     }
 }
