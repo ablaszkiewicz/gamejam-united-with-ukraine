@@ -30,15 +30,25 @@ public class CookingMinigameManager : MonoBehaviour
     {
         dialoguePanel = FindObjectOfType<DialoguePanel>();
         pot = FindObjectOfType<Pot>();
-        
-        dialoguePanel.LoadDialogue(welcomeDialogue);
-        
-        dialoguePanel.OnDialogueFinished += () =>
+
+
+        if (minigamesStatus.GetVisitStatus(SceneType.CookingMinigame))
         {
             pot.InitializeNextDish();
-        };
+        }
+        else
+        {
+            dialoguePanel.LoadDialogue(welcomeDialogue);
         
-        dialoguePanel.Show();
+            dialoguePanel.OnDialogueFinished += () =>
+            {
+                pot.InitializeNextDish();
+            };
+        
+            dialoguePanel.Show();
+        }
+        
+        minigamesStatus.VisitMinigame(SceneType.CookingMinigame);
     }
     
     public void CompleteMinigameAndExit()

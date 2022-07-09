@@ -12,6 +12,7 @@ public class Pot : MonoBehaviour
     
     private Dish currentDish;
     private CookingMinigameManager cookingMinigameManager;
+    private DragDropManager dragDropManager;
 
 
     private const float ANIMATION_STRENGTH = 0.2f;
@@ -20,6 +21,7 @@ public class Pot : MonoBehaviour
     private void Awake()
     {
         cookingMinigameManager = FindObjectOfType<CookingMinigameManager>();
+        dragDropManager = FindObjectOfType<DragDropManager>();
     }
     
 
@@ -53,5 +55,8 @@ public class Pot : MonoBehaviour
         {
             InitializeNextDish();
         }
+        
+        Destroy(col.gameObject);
+        dragDropManager.Detach();
     }
 }

@@ -59,7 +59,7 @@ public class DialoguePanel : MonoBehaviour
         
         sentence.text = "";
         currentTextTween.Kill();
-        currentTextTween = sentence.DOText(currentDialogue.sentence, currentDialogue.sentence.Length / 26.0f).SetEase(Ease.Linear);
+        currentTextTween = sentence.DOText(currentDialogue.sentence, currentDialogue.sentence.Length / 34.0f).SetEase(Ease.Linear);
         currentTextTween.onComplete = () => button.DOScale(Vector3.one, ANIMATION_DURATION).SetEase(Ease.OutQuint);
     }
 

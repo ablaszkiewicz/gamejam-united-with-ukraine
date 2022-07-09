@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Menu
 {
@@ -19,6 +20,16 @@ namespace Menu
         {
             minigamesStatuses.Where(status => status.sceneType == sceneType).FirstOrDefault().isFinished = true;
         }
+
+        public void VisitMinigame(SceneType sceneType)
+        {
+            minigamesStatuses.Where(status => status.sceneType == sceneType).FirstOrDefault().isVisited = true;
+        }
+        
+        public bool GetVisitStatus(SceneType sceneType)
+        {
+            return minigamesStatuses.Where(status => status.sceneType == sceneType).FirstOrDefault().isVisited;
+        }
     }
 
     [Serializable]
@@ -26,5 +37,6 @@ namespace Menu
     {
         public SceneType sceneType;
         public bool isFinished;
+        public bool isVisited;
     }
 }
