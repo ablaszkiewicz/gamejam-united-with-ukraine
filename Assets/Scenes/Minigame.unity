@@ -1011,6 +1011,7 @@ MonoBehaviour:
   maxBlocks: 6
   dialogue: {fileID: 11400000, guid: 515d6db63caf0d245a9a7a981b0a4932, type: 2}
   gameOverPanel: {fileID: 242094173}
+  status: {fileID: 11400000, guid: c08669ef47ee6354882b1aa462b4f545, type: 2}
 --- !u!4 &1322368030
 Transform:
   m_ObjectHideFlags: 0
@@ -1255,6 +1256,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1320716944}
     m_Modifications:
+    - target: {fileID: 7296152992324924131, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296152992324924131, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296152992324924131, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296152992324924131, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296152992324924131, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296152992379388254, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296152992379388254, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296152992379388254, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296152992379388254, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 529.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296152992379388254, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7296152992478006826, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
       propertyPath: m_Name
       value: DialoguePanel

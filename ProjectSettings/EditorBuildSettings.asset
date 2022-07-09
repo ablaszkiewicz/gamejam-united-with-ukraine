@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CookingMinigame.unity
     guid: bdba7e08a8c438745926bb24e3c77722
+  - enabled: 1
+    path: Assets/Scenes/RocketMInigame.unity
+    guid: a39ae0ebeb1a1704eb9562a5e792dbfd
   m_configObjects: {}

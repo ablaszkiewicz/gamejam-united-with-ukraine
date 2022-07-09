@@ -26,8 +26,7 @@ public class BuildingBlockManager : MonoBehaviour
     {
         sceneTransitionManager = FindObjectOfType<SceneTransitionManager>();
         _hookController = FindObjectOfType<HookController>();
-        status.CompleteMinigame(SceneType.MiniGame);
-        status.VisitMinigame(SceneType.MiniGame);
+        
     }
     
     void Start()
@@ -44,6 +43,9 @@ public class BuildingBlockManager : MonoBehaviour
         {
             StartGame();
         }
+        
+        status.CompleteMinigame(SceneType.MiniGame);
+        status.VisitMinigame(SceneType.MiniGame);
     }
 
     private void StartGame()

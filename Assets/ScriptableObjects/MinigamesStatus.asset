@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigamesStatuses:
   - sceneType: 1
-    isFinished: 0
-    isVisited: 0
+    isFinished: 1
+    isVisited: 1
   - sceneType: 2
-    isFinished: 0
-    isVisited: 0
+    isFinished: 1
+    isVisited: 1
   - sceneType: 3
-    isFinished: 0
-    isVisited: 0
+    isFinished: 1
+    isVisited: 1
