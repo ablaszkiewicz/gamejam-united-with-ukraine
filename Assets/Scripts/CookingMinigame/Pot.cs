@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using CookingMinigame;
+using DG.Tweening;
 using UnityEngine;
 
 public class Pot : MonoBehaviour
@@ -12,9 +13,17 @@ public class Pot : MonoBehaviour
     private Dish currentDish;
     private CookingMinigameManager cookingMinigameManager;
 
+
+    private const float ANIMATION_STRENGTH = 0.2f;
+    private const float ANIMATION_DURATION = 0.5f;
+
     private void Awake()
     {
         cookingMinigameManager = FindObjectOfType<CookingMinigameManager>();
+    }
+
+    private void Start()
+    {
         InitializeNextDish();
     }
 
@@ -40,6 +49,9 @@ public class Pot : MonoBehaviour
         {
             cookingMinigameManager.ShowGameOverScreen();
         }
+        
+
+        transform.DOPunchScale(Vector3.one * ANIMATION_STRENGTH, ANIMATION_DURATION);
 
         if (currentDish.IsDishFinished())
         {

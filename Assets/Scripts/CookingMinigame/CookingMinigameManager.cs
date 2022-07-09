@@ -13,15 +13,14 @@ public class CookingMinigameManager : MonoBehaviour
 {
     [SerializeField] private MinigamesStatus minigamesStatus;
     [SerializeField] private List<FoodTypeSprite> foodTypeSpriteMap;
-    [SerializeField] private GameObject recipePanel;
-    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private BasicPanel recipePanel;
+    [SerializeField] private BasicPanel gameOverScreen;
 
     [SerializeField] private TextMeshProUGUI dishDescription;
     [SerializeField] private Image food1;
     [SerializeField] private Image food2;
     [SerializeField] private Image food3;
     [SerializeField] private Image food4;
-    
     
     public void CompleteMinigameAndExit()
     {
@@ -36,7 +35,7 @@ public class CookingMinigameManager : MonoBehaviour
 
     public void ShowRecipe(Dish dish)
     {
-        recipePanel.SetActive(true);
+        recipePanel.Show();
         var ingredients = dish.GetIngredients();
 
         dishDescription.text = dish.GetDescription();
@@ -48,12 +47,12 @@ public class CookingMinigameManager : MonoBehaviour
 
     public void HideRecipe()
     {
-        recipePanel.SetActive(false);
+        recipePanel.Hide();
     }
 
     public void ShowGameOverScreen()
     {
-        gameOverScreen.SetActive(true);
+        gameOverScreen.Show();
     }
 
     public void Restart()
