@@ -42,10 +42,12 @@ public class Player : MonoBehaviour
         if (positionState == PositionState.RIGHT)
         {
             positionState = PositionState.CENTER;
+            FindObjectOfType<RocketMinigameSoundPlayer>().PlayDashSound();
         }
         else if (positionState == PositionState.CENTER)
         {
             positionState = PositionState.LEFT;
+            FindObjectOfType<RocketMinigameSoundPlayer>().PlayDashSound();
         }
     }
 
@@ -54,10 +56,13 @@ public class Player : MonoBehaviour
         if (positionState == PositionState.LEFT)
         {
             positionState = PositionState.CENTER;
+            FindObjectOfType<RocketMinigameSoundPlayer>().PlayDashSound();
+
         }
         else if (positionState == PositionState.CENTER)
         {
             positionState = PositionState.RIGHT;
+            FindObjectOfType<RocketMinigameSoundPlayer>().PlayDashSound();
         }
     }
 
@@ -92,6 +97,7 @@ public class Player : MonoBehaviour
         if (col.gameObject.CompareTag("Obstacle"))
         {
             rocketMinigameManager.StopGame();
+            FindObjectOfType<RocketMinigameSoundPlayer>().PlayCrashSound();
         }
         
         if (col.gameObject.CompareTag("WinChecker"))
