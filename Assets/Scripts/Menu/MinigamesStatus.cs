@@ -30,6 +30,21 @@ namespace Menu
         {
             return minigamesStatuses.Where(status => status.sceneType == sceneType).FirstOrDefault().isVisited;
         }
+
+        public int GetNumberOfCompletedScenes()
+        {
+            return minigamesStatuses.Where(status => status.isFinished).ToList().Count;
+        }
+
+        public List<SceneType> GetCompletedScenes()
+        {
+            return minigamesStatuses.Where(status => status.isFinished).Select(status => status.sceneType).ToList();
+        }
+        
+        public SceneType GetFirstNotCompletedScene()
+        {
+            return minigamesStatuses.Where(status => !status.isFinished).FirstOrDefault().sceneType;
+        }
     }
 
     [Serializable]

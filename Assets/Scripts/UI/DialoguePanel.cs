@@ -21,7 +21,6 @@ public class DialoguePanel : MonoBehaviour
 
     private List<SingleDialogue> dialogues;
     private const float ANIMATION_DURATION = 0.2f;
-    private const float TEXT_ANIMATION_DURATION = 1f;
     private Tween currentTextTween;
 
     private void Awake()
@@ -59,13 +58,21 @@ public class DialoguePanel : MonoBehaviour
         
         sentence.text = "";
         currentTextTween.Kill();
-        currentTextTween = sentence.DOText(currentDialogue.sentence, currentDialogue.sentence.Length / 34.0f).SetEase(Ease.Linear);
+        currentTextTween = sentence.DOText(currentDialogue.sentence, currentDialogue.sentence.Length / 200.0f).SetEase(Ease.Linear);
         currentTextTween.onComplete = () => button.DOScale(Vector3.one, ANIMATION_DURATION).SetEase(Ease.OutQuint);
     }
 
     private void FinishDialogue()
     {
-        OnDialogueFinished.Invoke();
+        try
+        {
+            OnDialogueFinished.Invoke();
+        }
+        catch
+        {
+            
+        }
+
         Hide();
     }
 

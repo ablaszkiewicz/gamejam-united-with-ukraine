@@ -15,5 +15,7 @@ MonoBehaviour:
   minigamesStatuses:
   - sceneType: 1
     isFinished: 0
+    isVisited: 0
   - sceneType: 2
     isFinished: 0
+    isVisited: 0
