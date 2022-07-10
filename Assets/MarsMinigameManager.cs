@@ -21,4 +21,9 @@ public class MarsMinigameManager : MonoBehaviour
         dialoguePanel.Show();
         dialoguePanel.OnDialogueFinished += gameOverPanel.Show;
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

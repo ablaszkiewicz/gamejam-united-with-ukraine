@@ -37,3 +37,8 @@ MonoBehaviour:
     sentence: Focus. Really important people gathered here
     buttonText: fine
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
+  - name: Rob
+    sentence: Drag items to the cooking pot according to instructions displayed before
+      each round
+    buttonText: Ok, thanks
+    image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}

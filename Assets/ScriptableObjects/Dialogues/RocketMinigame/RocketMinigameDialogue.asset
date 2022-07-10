@@ -41,3 +41,7 @@ MonoBehaviour:
     sentence: A rocket? Are you out of your mind?
     buttonText: Got to go
     image: {fileID: 21300000, guid: a04b5d7dd5ea09a498fba2f88f6eca81, type: 3}
+  - name: Rob
+    sentence: Hey. Quick tutorial - use arrow keys to steer the rocket
+    buttonText: Ok, thanks
+    image: {fileID: 21300000, guid: a04b5d7dd5ea09a498fba2f88f6eca81, type: 3}

@@ -1224,9 +1224,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CookingMinigameManager, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 110378485}
+        m_TargetAssemblyTypeName: MarsMinigameManager, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2182,7 +2182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7296152992379388254, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 529.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7296152992379388254, guid: ac0fdaf1e6d1f0f459608be311edd467, type: 3}
       propertyPath: m_AnchoredPosition.y

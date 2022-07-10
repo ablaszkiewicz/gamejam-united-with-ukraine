@@ -21,3 +21,7 @@ MonoBehaviour:
     sentence: There is a problem. All the workers are on vacation.
     buttonText: Fine. I will do it myself.
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
+  - name: Rob
+    sentence: Press space to release the block.
+    buttonText: Ok
+    image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
