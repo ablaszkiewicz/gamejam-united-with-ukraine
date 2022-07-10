@@ -43,13 +43,13 @@ MonoBehaviour:
     buttonText: wow
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
-    sentence: But not so fast. You have to take care of couple of events as a head
-      of eastral
+    sentence: Ok but wait. You have to take care of couple of events as a head of
+      eastral
     buttonText: what?
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
     sentence: You have to coordinate building of the eastral headquarters in warsaw.
-      Your plane is starting in 20 minutes. You are the main organiser of this
+      Your plane is starting in 20 minutes. You are hosting this event.
     buttonText: wait
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob

@@ -18,10 +18,18 @@ MonoBehaviour:
     buttonText: What's up?
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
-    sentence: United, we reached our ultimate goal
-    buttonText: exactly
+    sentence: You've proven that together we can achieve anything.
+    buttonText: Thank you
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob
-    sentence: Thank you for your service, sir
-    buttonText: it has been a pleasure
+    sentence: World has seen the power of united central and eastern europe.
+    buttonText: Great stuff
+    image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
+  - name: Rob
+    sentence: Eastral was a great project but I think it is only the beginnig.
+    buttonText: really?
+    image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
+  - name: Rob
+    sentence: Imagine what else can we achieve together.
+    buttonText: Looking forward to it
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}

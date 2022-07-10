@@ -7,7 +7,11 @@ public class MarsMinigameManager : MonoBehaviour
 {
     [SerializeField] private Dialogue dialogue;
 
+    [SerializeField]
+    private BasicPanel gameOverPanel;
+    
     private DialoguePanel dialoguePanel;
+    
 
     private void Start()
     {
@@ -15,5 +19,6 @@ public class MarsMinigameManager : MonoBehaviour
         
         dialoguePanel.LoadDialogue(dialogue);
         dialoguePanel.Show();
+        dialoguePanel.OnDialogueFinished += gameOverPanel.Show;
     }
 }

@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: c8b63e42f8559ba43a67af8e00dab174, type: 2}
+  gameOverPanel: {fileID: 1843392965}
 --- !u!4 &110378486
 Transform:
   m_ObjectHideFlags: 0
@@ -1676,7 +1677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: yes i can do better
+  m_text: quit the game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3203e05b4bec38d43a1153bd2ff82879, type: 2}
   m_sharedMaterial: {fileID: 661652584902246673, guid: 3203e05b4bec38d43a1153bd2ff82879, type: 2}
@@ -2397,7 +2398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1843392964
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2523,7 +2524,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -9.15}
-  m_SizeDelta: {x: 676.1, y: 481.6}
+  m_SizeDelta: {x: 694.18, y: 481.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146418558
 MonoBehaviour:
@@ -2545,8 +2546,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Come on. This is not an international grade dish. I am sure you can do
-    better
+  m_text: 'Thank you for playing.
+
+
+
+    Authors:
+
+    - Aleksander Blaszkiewicz,
+
+    -
+    Dominik Piotrowicz'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3203e05b4bec38d43a1153bd2ff82879, type: 2}
   m_sharedMaterial: {fileID: 661652584902246673, guid: 3203e05b4bec38d43a1153bd2ff82879, type: 2}

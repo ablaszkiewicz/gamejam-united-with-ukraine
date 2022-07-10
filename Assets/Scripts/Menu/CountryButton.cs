@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Menu;
 using TMPro;
 using UnityEngine;
@@ -54,7 +55,8 @@ public class CountryButton : MonoBehaviour
     public void MarkNextTask()
     {
         countryType = CountryType.PENDING;
-        spriteRenderer.color = Color.yellow;
+        spriteRenderer.color = Color.gray;
+        spriteRenderer.DOColor(Color.yellow, 0.5f).SetLoops(-1, LoopType.Yoyo);
     }
 
     private void OnMouseDrag()
@@ -69,6 +71,7 @@ public class CountryButton : MonoBehaviour
     {
         if (countryType == CountryType.PENDING)
         {
+            spriteRenderer.DOKill();
             spriteRenderer.color = Color.green;
         }
     }
@@ -77,7 +80,7 @@ public class CountryButton : MonoBehaviour
     {
         if (countryType == CountryType.PENDING)
         {
-            spriteRenderer.color = Color.yellow;
+            MarkNextTask();
         }
     }
 }
