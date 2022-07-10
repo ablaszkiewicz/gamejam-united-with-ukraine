@@ -69,10 +69,10 @@ public class CookingMinigameManager : MonoBehaviour
         var ingredients = dish.GetIngredients();
 
         dishDescription.text = dish.GetDescription();
-        food1.sprite = GetSpriteForFoodType(ingredients[0]);
-        food2.sprite = GetSpriteForFoodType(ingredients[1]);
-        food3.sprite = GetSpriteForFoodType(ingredients[2]);
-        food4.sprite = GetSpriteForFoodType(ingredients[3]);
+        food1.sprite = ingredients.Count > 0 ? GetSpriteForFoodType(ingredients[0]) : null;
+        food2.sprite = ingredients.Count > 1 ? GetSpriteForFoodType(ingredients[1]) : null;
+        food3.sprite = ingredients.Count > 2 ? GetSpriteForFoodType(ingredients[2]) : null;
+        food4.sprite = ingredients.Count > 3 ? GetSpriteForFoodType(ingredients[3]) : null;
     }
 
     public void HideRecipe()

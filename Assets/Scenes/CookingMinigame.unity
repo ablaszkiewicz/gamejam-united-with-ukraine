@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6e416813994fdab42a1d80438bd6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredients: 05000000050000000300000000000000
+  ingredients: 05000000030000000000000004000000
   description: And paska for the dessert. Make sure to add much sugar. They will
     love it
 --- !u!1 &415734377
@@ -2188,7 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6e416813994fdab42a1d80438bd6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredients: 00000000000000000400000003000000
+  ingredients: 000000000300000004000000
   description: Now nalesnyky. Maximum 1 minute on each side
 --- !u!1 &1064709104
 GameObject:
@@ -2997,7 +2997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6e416813994fdab42a1d80438bd6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredients: 04000000040000000000000003000000
+  ingredients: 0400000000000000
   description: First dish will be Varenyky. Don't mess this up
 --- !u!1 &1413051336
 GameObject:
