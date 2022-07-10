@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - name: Rob
-    sentence: Ok. We got to the ukraine
+    sentence: Ok. We got to kraine
     buttonText: nice
     image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
   - name: Rob

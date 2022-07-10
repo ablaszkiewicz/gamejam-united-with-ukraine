@@ -44,4 +44,4 @@ MonoBehaviour:
   - name: Rob
     sentence: Hey. Quick tutorial - use arrow keys to steer the rocket
     buttonText: Ok, thanks
-    image: {fileID: 21300000, guid: a04b5d7dd5ea09a498fba2f88f6eca81, type: 3}
+    image: {fileID: 21300000, guid: 61d8724e7f10725438b502f60d7945d2, type: 3}
